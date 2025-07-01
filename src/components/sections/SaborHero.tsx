@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -127,28 +128,30 @@ const SaborHero = () => {
       </div>
 
       {/* Estilos CSS para cupcakes caindo */}
-      <style jsx>{`
-        .falling-cupcake {
-          position: absolute;
-          user-select: none;
-          animation-name: cair;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-        }
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .falling-cupcake {
+            position: absolute;
+            user-select: none;
+            animation-name: cair;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+          }
 
-        @keyframes cair {
-          0% {
-            top: -10%;
-            opacity: 1;
-            transform: rotate(0deg);
+          @keyframes cair {
+            0% {
+              top: -10%;
+              opacity: 1;
+              transform: rotate(0deg);
+            }
+            100% {
+              top: 110%;
+              opacity: 1;
+              transform: rotate(360deg);
+            }
           }
-          100% {
-            top: 110%;
-            opacity: 1;
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
+        `
+      }} />
     </section>
   );
 };
