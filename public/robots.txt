@@ -1,0 +1,23 @@
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sabordoceu.com.br/sitemap.xml
+
+# Disallow admin and login paths (future-proofing)
+Disallow: /admin/
+Disallow: /login/
+Disallow: /wp-admin/
+Disallow: /private/
+
+# Allow crawling of main content
+Allow: /#sobre
+Allow: /#servicos
+Allow: /#planos
+Allow: /#depoimentos
+Allow: /#localizacao
+Allow: /#contato
+
+# Crawl delay (optional)
+Crawl-delay: 1
