@@ -253,6 +253,6 @@ a:focus-visible {
 /* Large screen optimizations */
 @media (min-width: 1920px) {
   .section-container {
-    @apply max-w-8xl py-20;
+    @apply max-w-7xl py-20;
   }
 }
