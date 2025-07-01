@@ -8,11 +8,43 @@ const SaborHero = () => {
     setIsVisible(true);
   }, []);
 
+  useEffect(() => {
+    // Criar cupcakes caindo
+    const container = document.getElementById('cupcake-container');
+    if (!container) return;
+
+    const numeroDeCupcakes = 30;
+
+    for (let i = 0; i < numeroDeCupcakes; i++) {
+      const cupcake = document.createElement('div');
+      cupcake.classList.add('falling-cupcake');
+      cupcake.innerHTML = '🧁';
+
+      // Propriedades aleatórias para cada cupcake
+      cupcake.style.left = Math.random() * 100 + 'vw';
+      cupcake.style.animationDuration = (Math.random() * 10 + 5) + 's';
+      cupcake.style.animationDelay = Math.random() * 5 + 's';
+      cupcake.style.fontSize = (Math.random() * 20 + 20) + 'px';
+
+      container.appendChild(cupcake);
+    }
+
+    // Cleanup function para remover os cupcakes quando o componente for desmontado
+    return () => {
+      if (container) {
+        container.innerHTML = '';
+      }
+    };
+  }, []);
+
   return (
     <section 
       id="inicio" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-pink-100 via-white to-blue-100"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-pink-200"
     >
+      {/* Container para cupcakes caindo */}
+      <div id="cupcake-container" className="absolute inset-0 pointer-events-none z-0"></div>
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-repeat bg-center" style={{
@@ -93,6 +125,30 @@ const SaborHero = () => {
           <p className="text-sm text-gray-500 mt-2">Role para baixo</p>
         </motion.div>
       </div>
+
+      {/* Estilos CSS para cupcakes caindo */}
+      <style jsx>{`
+        .falling-cupcake {
+          position: absolute;
+          user-select: none;
+          animation-name: cair;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+
+        @keyframes cair {
+          0% {
+            top: -10%;
+            opacity: 1;
+            transform: rotate(0deg);
+          }
+          100% {
+            top: 110%;
+            opacity: 1;
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
     </section>
   );
 };
