@@ -73,125 +73,127 @@ const SaborGallery = () => {
   };
 
   return (
-    <section className="section-container bg-gradient-to-br from-pink-50 to-blue-50">
-      <motion.div
-        className="text-center mb-12"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="section-title text-pink-600">
-          Nossa Galeria
-        </h2>
-        <p className="section-subtitle">
-          Conheça algumas das nossas deliciosas criações feitas com muito carinho
-        </p>
-      </motion.div>
-
-      <div className="relative max-w-4xl mx-auto">
-        {/* Main carousel container */}
-        <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 300 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -300 }}
-              transition={{ duration: 0.5 }}
-              className="absolute inset-0"
-            >
-              <img
-                src={images[currentIndex].src}
-                alt={images[currentIndex].alt}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                  {images[currentIndex].title}
-                </h3>
-                <p className="text-lg opacity-90">
-                  {images[currentIndex].alt}
-                </p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation arrows */}
-          <button
-            onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 text-white hover:scale-110"
-            aria-label="Imagem anterior"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button
-            onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 text-white hover:scale-110"
-            aria-label="Próxima imagem"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Thumbnail navigation */}
-        <div className="flex justify-center mt-6 space-x-2 overflow-x-auto pb-2">
-          {images.map((image, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'border-pink-400 shadow-lg scale-110' 
-                  : 'border-transparent hover:border-pink-200'
-              }`}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-              />
-            </button>
-          ))}
-        </div>
-
-        {/* Dots indicator */}
-        <div className="flex justify-center mt-4 space-x-2">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'bg-pink-500 scale-125' 
-                  : 'bg-pink-200 hover:bg-pink-300'
-              }`}
-              aria-label={`Ir para imagem ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Call to action */}
-      <motion.div
-        className="text-center mt-12"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        viewport={{ once: true }}
-      >
-        <p className="text-lg text-gray-600 mb-6">
-          Gostou do que viu? Entre em contato conosco!
-        </p>
-        <button
-          onClick={() => window.open('https://wa.me/5521999999999?text=Olá!%20Vi%20a%20galeria%20e%20gostaria%20de%20fazer%20um%20pedido.', '_blank')}
-          className="btn-primary text-lg px-8 py-4 rounded-full hover:scale-105 transition-transform duration-300"
+    <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-pink-50 to-blue-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="text-center mb-8 sm:mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          Faça Seu Pedido
-        </button>
-      </motion.div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-pink-600 mb-4">
+            Nossa Galeria
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+            Conheça algumas das nossas deliciosas criações feitas com muito carinho
+          </p>
+        </motion.div>
+
+        <div className="relative max-w-5xl mx-auto">
+          {/* Main carousel container */}
+          <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, x: 300 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -300 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0"
+              >
+                <img
+                  src={images[currentIndex].src}
+                  alt={images[currentIndex].alt}
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">
+                    {images[currentIndex].title}
+                  </h3>
+                  <p className="text-sm sm:text-base lg:text-lg opacity-90 line-clamp-2">
+                    {images[currentIndex].alt}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Navigation arrows */}
+            <button
+              onClick={goToPrevious}
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-3 transition-all duration-300 text-white hover:scale-110 z-10"
+              aria-label="Imagem anterior"
+            >
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+            </button>
+            
+            <button
+              onClick={goToNext}
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-3 transition-all duration-300 text-white hover:scale-110 z-10"
+              aria-label="Próxima imagem"
+            >
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+            </button>
+          </div>
+
+          {/* Thumbnail navigation */}
+          <div className="flex justify-center mt-4 sm:mt-6 space-x-1 sm:space-x-2 overflow-x-auto pb-2 px-2">
+            {images.map((image, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-md sm:rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'border-pink-400 shadow-lg scale-105 sm:scale-110' 
+                    : 'border-transparent hover:border-pink-200'
+                }`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover object-center"
+                />
+              </button>
+            ))}
+          </div>
+
+          {/* Dots indicator */}
+          <div className="flex justify-center mt-3 sm:mt-4 space-x-1.5 sm:space-x-2">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-pink-500 scale-125' 
+                    : 'bg-pink-200 hover:bg-pink-300'
+                }`}
+                aria-label={`Ir para imagem ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Call to action */}
+        <motion.div
+          className="text-center mt-8 sm:mt-12 px-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
+            Gostou do que viu? Entre em contato conosco!
+          </p>
+          <button
+            onClick={() => window.open('https://wa.me/5511991455137?text=Olá!%20Vi%20a%20galeria%20e%20gostaria%20de%20fazer%20um%20pedido.', '_blank')}
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-pink-400 border border-transparent rounded-full shadow-sm hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-400 transition-all duration-300 hover:scale-105"
+          >
+            Faça Seu Pedido
+          </button>
+        </motion.div>
+      </div>
     </section>
   );
 };
