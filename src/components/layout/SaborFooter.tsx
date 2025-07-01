@@ -1,4 +1,3 @@
-
 import { Heart, Instagram, Phone, Mail } from 'lucide-react';
 
 const SaborFooter = () => {
@@ -10,7 +9,7 @@ const SaborFooter = () => {
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <img
-                src="/lovable-uploads/6325941d-60a7-414f-86bb-7ebea6b4155c.png"
+                src="/lovable-uploads/38be95a2-a087-46f0-bdc2-bda900be6b9e.png"
                 alt="Sabor do Céu"
                 className="h-12 w-12 mr-3"
               />

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -29,7 +28,7 @@ const SaborHero = () => {
           className="mb-8"
         >
           <img
-            src="/lovable-uploads/4b578483-b23a-4ae0-b5da-6d37bf6f05b4.png"
+            src="/lovable-uploads/38be95a2-a087-46f0-bdc2-bda900be6b9e.png"
             alt="Sabor do Céu - Logo"
             className="h-32 w-32 md:h-40 md:w-40 mx-auto mb-6"
           />

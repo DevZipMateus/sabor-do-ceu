@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -35,7 +34,7 @@ const SaborHeader = () => {
           {/* Logo */}
           <a href="#inicio" className="flex-shrink-0" aria-label="Sabor do Céu - Página inicial">
             <img
-              src="/lovable-uploads/4b578483-b23a-4ae0-b5da-6d37bf6f05b4.png"
+              src="/lovable-uploads/38be95a2-a087-46f0-bdc2-bda900be6b9e.png"
               alt="Sabor do Céu - Bolos e Doces"
               className="h-12 w-12 lg:h-16 lg:w-16"
             />
