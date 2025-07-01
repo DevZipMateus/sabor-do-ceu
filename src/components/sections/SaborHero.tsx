@@ -109,22 +109,6 @@ const SaborHero = () => {
             Conheça Nossa História
           </a>
         </motion.div>
-
-        <motion.div
-          className="mt-16"
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <div className="flex justify-center">
-            <a href="#sobre" className="animate-bounce">
-              <div className="w-6 h-10 border-2 border-pink-400 rounded-full flex justify-center p-1">
-                <div className="w-1 h-3 bg-pink-400 rounded-full animate-pulse"></div>
-              </div>
-            </a>
-          </div>
-          <p className="text-sm text-gray-500 mt-2">Role para baixo</p>
-        </motion.div>
       </div>
 
       {/* Estilos CSS para cupcakes caindo */}
