@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -6,6 +5,7 @@ import { cn } from '@/lib/utils';
 const SaborHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +15,10 @@ const SaborHeader = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleLogoError = () => {
+    setLogoError(true);
+  };
 
   const menuItems = [
     { href: '#inicio', label: 'Início' },
@@ -34,11 +38,18 @@ const SaborHeader = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#inicio" className="flex-shrink-0" aria-label="Sabor do Céu - Página inicial">
-            <img
-              src="/lovable-uploads/4b578483-b23a-4ae0-b5da-6d37bf6f05b4.png"
-              alt="Sabor do Céu - Bolos e Doces"
-              className="h-12 w-12 lg:h-16 lg:w-16"
-            />
+            {!logoError ? (
+              <img
+                src="/lovable-uploads/4b578483-b23a-4ae0-b5da-6d37bf6f05b4.png"
+                alt="Sabor do Céu - Bolos e Doces"
+                className="h-12 w-12 lg:h-16 lg:w-16"
+                onError={handleLogoError}
+              />
+            ) : (
+              <div className="h-12 w-12 lg:h-16 lg:w-16 bg-pink-200 rounded-full flex items-center justify-center">
+                <span className="text-pink-600 font-bold text-sm lg:text-base">SC</span>
+              </div>
+            )}
           </a>
 
           {/* Desktop Menu */}

@@ -1,13 +1,17 @@
-
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const SaborHero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleLogoError = () => {
+    setLogoError(true);
+  };
 
   return (
     <section 
@@ -28,11 +32,18 @@ const SaborHero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-6 sm:mb-8"
         >
-          <img
-            src="/lovable-uploads/4b578483-b23a-4ae0-b5da-6d37bf6f05b4.png"
-            alt="Sabor do Céu - Logo"
-            className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 mx-auto mb-4 sm:mb-6 object-contain"
-          />
+          {!logoError ? (
+            <img
+              src="/lovable-uploads/4b578483-b23a-4ae0-b5da-6d37bf6f05b4.png"
+              alt="Sabor do Céu - Logo"
+              className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 mx-auto mb-4 sm:mb-6 object-contain"
+              onError={handleLogoError}
+            />
+          ) : (
+            <div className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 mx-auto mb-4 sm:mb-6 bg-pink-200 rounded-full flex items-center justify-center">
+              <span className="text-pink-600 font-bold text-lg sm:text-xl md:text-2xl">SC</span>
+            </div>
+          )}
         </motion.div>
 
         <motion.h1

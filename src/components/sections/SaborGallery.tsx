@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 const SaborGallery = () => {
   const images = [
@@ -48,6 +49,22 @@ const SaborGallery = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Preload adjacent images
+  useEffect(() => {
+    const preloadImage = (src: string) => {
+      const img = new Image();
+      img.src = src;
+    };
+
+    // Preload current, next and previous images
+    const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    const nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+
+    preloadImage(images[currentIndex].src);
+    preloadImage(images[prevIndex].src);
+    preloadImage(images[nextIndex].src);
+  }, [currentIndex, images]);
 
   // Auto-advance carousel every 3 seconds
   useEffect(() => {
@@ -102,10 +119,11 @@ const SaborGallery = () => {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                <img
+                <OptimizedImage
                   src={images[currentIndex].src}
                   alt={images[currentIndex].alt}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
@@ -149,10 +167,11 @@ const SaborGallery = () => {
                     : 'border-transparent hover:border-pink-200'
                 }`}
               >
-                <img
+                <OptimizedImage
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full"
+                  loading={Math.abs(index - currentIndex) <= 2 ? 'eager' : 'lazy'}
                 />
               </button>
             ))}
