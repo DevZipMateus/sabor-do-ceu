@@ -45,6 +45,21 @@ const SaborGallery = () => {
       src: '/lovable-uploads/a9064846-d5dd-481b-aaf7-fd61a73941e8.png',
       alt: 'Pudins caseiros com cartão especial',
       title: 'Pudins Caseiros'
+    },
+    {
+      src: '/lovable-uploads/08187dc3-e4c6-4c4b-a32d-bb7b9215be2e.png',
+      alt: 'Bolos no pote em diversos sabores',
+      title: 'Bolos no Pote'
+    },
+    {
+      src: '/lovable-uploads/95afc9e5-fcb4-4278-a744-cc30e87553d5.png',
+      alt: 'Copos da felicidade com camadas especiais',
+      title: 'Copos da Felicidade'
+    },
+    {
+      src: '/lovable-uploads/ce100a78-f4ca-4b3c-9a3b-aa3378d83d36.png',
+      alt: 'Bolos caseiros variados',
+      title: 'Bolos Caseiros'
     }
   ];
 
