@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -9,13 +8,13 @@ const SaborGallery = () => {
   const images = [
     {
       src: '/lovable-uploads/dcf3e087-473b-47da-891b-2b6b02a8f681.png',
-      alt: 'Sobremesas variadas em potes individuais',
-      title: 'Sobremesas Personalizadas'
+      alt: 'Bolos no pote em porções individuais',
+      title: 'Bolos no Pote'
     },
     {
       src: '/lovable-uploads/7cce282b-9359-40c9-9f0f-3a6767ffefe1.png',
-      alt: 'Doces e chocolates em embalagem especial',
-      title: 'Doces Especiais'
+      alt: 'Trufas em embalagem especial',
+      title: 'Trufas'
     },
     {
       src: '/lovable-uploads/be74a860-c2bc-4f0d-8452-febe5f268a38.png',
@@ -25,7 +24,7 @@ const SaborGallery = () => {
     {
       src: '/lovable-uploads/18408830-c07e-4d52-8075-3660764e7b79.png',
       alt: 'Bolo com cobertura branca e frutas vermelhas',
-      title: 'Bolos Artesanais'
+      title: 'Bolo'
     },
     {
       src: '/lovable-uploads/35ec5d79-a58a-4111-8dd0-2dc316174034.png',
@@ -34,13 +33,13 @@ const SaborGallery = () => {
     },
     {
       src: '/lovable-uploads/2873e589-51fc-4fb8-958f-a6b5e79ebad0.png',
-      alt: 'Fatia de bolo com recheio cremoso',
-      title: 'Recheios Especiais'
+      alt: 'Cones doces especiais',
+      title: 'Cones'
     },
     {
       src: '/lovable-uploads/4eb75efb-1cb7-44a4-a42e-49320cb1fbce.png',
-      alt: 'Bombons de chocolate artesanais',
-      title: 'Bombons Artesanais'
+      alt: 'Pães de mel artesanais',
+      title: 'Pão de Mel'
     },
     {
       src: '/lovable-uploads/d911bcd7-d04a-485f-a99b-1cf1375271e3.png',
@@ -53,7 +52,7 @@ const SaborGallery = () => {
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const [loadingImages, setLoadingImages] = useState<Set<number>>(new Set());
 
-  // Auto-advance carousel every 3 seconds
+  // Auto-advance carousel every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => 
@@ -131,7 +130,7 @@ const SaborGallery = () => {
       <div className="relative max-w-5xl mx-auto">
         {/* Main carousel container with fixed aspect ratio */}
         <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
-          <AspectRatio ratio={16/10} className="bg-gray-100">
+          <AspectRatio ratio={16/9} className="bg-gray-100">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
