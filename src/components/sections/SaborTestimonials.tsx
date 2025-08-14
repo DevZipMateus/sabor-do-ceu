@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
@@ -40,25 +39,25 @@ const SaborTestimonials = () => {
       name: 'João Santos',
       text: 'Já pedi várias vezes os pães de mel e sempre fico impressionado com a qualidade. São macios, saborosos e chegam sempre fresquinhos. Recomendo muito!',
       rating: 5,
-      location: 'São Paulo, SP'
+      location: 'Itapevi, SP'
     },
     {
       name: 'Ana Oliveira',
       text: 'Contratei o serviço para o chá de bebê da minha sobrinha e foi perfeito! A apresentação estava linda e o sabor... sem palavras! Parabéns pelo trabalho!',
       rating: 5,
-      location: 'São Paulo, SP'
+      location: 'Barueri, SP'
     },
     {
       name: 'Carlos Ferreira',
       text: 'A cesta de presente que comprei para minha esposa foi um acerto total! Ela ficou encantada com a variedade e qualidade dos doces. Voltarei a comprar com certeza.',
       rating: 5,
-      location: 'São Paulo, SP'
+      location: 'Itapevi, SP'
     },
     {
       name: 'Luciana Costa',
       text: 'Descobri o Sabor do Céu através de uma amiga e me tornei cliente fiel. Os doces são artesanais de verdade, você sente o carinho em cada mordida.',
       rating: 5,
-      location: 'São Paulo, SP'
+      location: 'Barueri, SP'
     },
     {
       name: 'Roberto Lima',
