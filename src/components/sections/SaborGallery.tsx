@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -35,7 +34,7 @@ const SaborGallery = () => {
     {
       src: '/lovable-uploads/2873e589-51fc-4fb8-958f-a6b5e79ebad0.png',
       alt: 'Cones doces especiais',
-      title: 'Cones'
+      title: 'Cone Trufado'
     },
     {
       src: '/lovable-uploads/36449a98-da38-44e9-b687-225b483cfeb7.png',
