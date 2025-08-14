@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Cake, Heart, Cookie, Gift, Coffee, Users } from 'lucide-react';
+import { Cake, Heart, Cookie, Coffee, PartyPopper } from 'lucide-react';
 
 const SaborServices = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,22 +49,10 @@ const SaborServices = () => {
       features: ['Brigadeiros gourmet', 'Beijinhos especiais', 'Trufas artesanais']
     },
     {
-      icon: Gift,
-      title: 'Cestas de Presente',
-      description: 'Cestas personalizadas com nossos melhores doces, perfeitas para presentear.',
-      features: ['Embalagem elegante', 'Mix de produtos', 'Cartão personalizado']
-    },
-    {
-      icon: Coffee,
-      title: 'Kit Café da Manhã',
-      description: 'Kits especiais para um café da manhã inesquecível com nossos doces fresquinhos.',
-      features: ['Pães especiais', 'Doces variados', 'Entrega matinal']
-    },
-    {
-      icon: Users,
-      title: 'Eventos e Festas',
-      description: 'Mesa de doces completa para seus eventos, com variedade e apresentação impecável.',
-      features: ['Planejamento completo', 'Decoração temática', 'Serviço de buffet']
+      icon: PartyPopper,
+      title: 'Kit Festa',
+      description: 'Kit completo para suas festas com tudo que você precisa para adoçar a comemoração.',
+      features: ['Bolo confeitado', 'Doces diversificados', 'Mini pães de mel', 'Mini cones']
     }
   ];
 
@@ -83,7 +71,7 @@ const SaborServices = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
