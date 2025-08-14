@@ -67,11 +67,11 @@ const SaborLocation = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             className="space-y-6"
-            initial={{ opacity: 0, x: -50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             {locationInfo.map((item, index) => (
@@ -88,40 +88,20 @@ const SaborLocation = () => {
               </div>
             ))}
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
                 href="https://wa.me/5511991455137?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20com%20entrega"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary w-full text-center"
+                className="btn-primary flex-1 text-center"
               >
                 Solicitar Entrega
               </a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            <div className="bg-gradient-to-br from-pink-100 to-blue-100 rounded-xl p-8 text-center">
-              <MapPin className="h-16 w-16 text-pink-500 mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Nossa Localização</h3>
-              <p className="text-gray-600 mb-6">
-                Estamos localizados no Parque Suburbano, em São Paulo. 
-                Nossa cozinha artesanal fica em um ambiente aconchegante onde preparamos 
-                todos os nossos doces com muito carinho.
-              </p>
-              <p className="text-sm text-gray-500 mb-6">
-                * Atendimento preferencialmente com agendamento prévio
-              </p>
               <a
                 href="https://www.google.com/maps/search/Alzira+Rocha+da+Silva,+370+Parque+Suburbano+São+Paulo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary"
+                className="btn-secondary flex-1 text-center"
               >
                 Ver no Google Maps
               </a>
