@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Phone, Navigation } from 'lucide-react';
@@ -38,7 +37,7 @@ const SaborLocation = () => {
     {
       icon: Clock,
       title: 'Horário de Atendimento',
-      info: 'Segunda à Sexta: 8h às 18h\nSábado: 8h às 14h\nDomingo: Sob consulta'
+      info: 'Terça a Sábado: 09h às 18h'
     },
     {
       icon: Phone,
