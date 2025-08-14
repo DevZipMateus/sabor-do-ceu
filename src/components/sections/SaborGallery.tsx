@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -27,8 +28,8 @@ const SaborGallery = () => {
       title: 'Bolo'
     },
     {
-      src: '/lovable-uploads/35ec5d79-a58a-4111-8dd0-2dc316174034.png',
-      alt: 'Bolo de chocolate com morangos',
+      src: '/lovable-uploads/3b6de295-b52e-4be0-af47-5e3657406018.png',
+      alt: 'Bolo de chocolate com morangos e granulado',
       title: 'Bolos de Chocolate'
     },
     {
@@ -37,13 +38,13 @@ const SaborGallery = () => {
       title: 'Cones'
     },
     {
-      src: '/lovable-uploads/4eb75efb-1cb7-44a4-a42e-49320cb1fbce.png',
-      alt: 'Pães de mel artesanais',
+      src: '/lovable-uploads/36449a98-da38-44e9-b687-225b483cfeb7.png',
+      alt: 'Pães de mel cobertos com chocolate',
       title: 'Pão de Mel'
     },
     {
-      src: '/lovable-uploads/d911bcd7-d04a-485f-a99b-1cf1375271e3.png',
-      alt: 'Pudins caseiros',
+      src: '/lovable-uploads/a9064846-d5dd-481b-aaf7-fd61a73941e8.png',
+      alt: 'Pudins caseiros com cartão especial',
       title: 'Pudins Caseiros'
     }
   ];
